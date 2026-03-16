@@ -1,8 +1,35 @@
 
-public class PalindromeCheckerApp {
+public class PalindromeCharArray {
+
     public static void main(String[] args) {
-System.out.println("Welcome to the Palindrome Checker Management System");
-        System.out.println("Version 1.0");
-        System.out.println("System initialized Successfully");
+
+        // Original string
+        String text = "madam";
+
+        // Convert string to character array
+        char[] chars = text.toCharArray();
+
+        // Two pointers
+        int start = 0;
+        int end = chars.length - 1;
+
+        boolean isPalindrome = true;
+
+        // Compare characters from both ends
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        // Display result
+        if (isPalindrome) {
+            System.out.println("The string \"" + text + "\" is a Palindrome.");
+        } else {
+            System.out.println("The string \"" + text + "\" is NOT a Palindrome.");
+        }
     }
 }
